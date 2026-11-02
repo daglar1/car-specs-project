@@ -1,8 +1,33 @@
 services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: caruser
+      POSTGRES_PASSWORD: carpass
+      POSTGRES_DB: cardb
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U caruser -d cardb"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - car-network
+
   backend:
     build: ./backend
     ports:
       - "3000:3000"
+    environment:
+      DB_HOST: db
+      DB_USER: caruser
+      DB_PASSWORD: carpass
+      DB_NAME: cardb
+    depends_on:
+      db:
+        condition: service_healthy
     networks:
       - car-network
 
@@ -17,3 +42,6 @@ services:
 
 networks:
   car-network:
+
+volumes:
+  db-data:
