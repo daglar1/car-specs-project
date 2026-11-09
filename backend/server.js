@@ -44,6 +44,20 @@ app.get('/api/cars/:id', async (req, res) => {
   }
 });
 
+// Returns all spare parts of a car
+app.get('/api/cars/:id/parts', async (req, res) => {
+  try {
+    const result = await pool.query(
+      'SELECT id, name, category, part_number FROM parts WHERE car_id = $1 ORDER BY category, name',
+      [req.params.id]
+    );
+    res.json(result.rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
 app.listen(3000, () => {
   console.log('Backend running on port 3000');
 });
