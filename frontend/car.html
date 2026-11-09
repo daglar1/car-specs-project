@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Car Specs</h1>
+    <p>Iconic cars from 1980 to 2010</p>
+  </header>
+
+  <main class="detail">
+    <a href="index.html" class="back-link">&larr; All cars</a>
+    <h2 id="car-title">Loading...</h2>
+
+    <h3>Specs</h3>
+    <table>
+      <tbody id="specs-body"></tbody>
+    </table>
+
+    <h3>Spare Parts</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Part Number</th>
+        </tr>
+      </thead>
+      <tbody id="parts-body"></tbody>
+    </table>
+  </main>
+
+  <script src="car.js"></script>
+</body>
+</html>

@@ -34,3 +34,45 @@ body {
   .car-card h3 {
     margin: 0 0 8px;
   }
+  /* Make card links look like cards */
+a.car-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s;
+}
+
+a.car-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Detail page */
+.detail {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.back-link {
+  color: #555;
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  margin-bottom: 24px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background: #1a1a1a;
+  color: white;
+}
