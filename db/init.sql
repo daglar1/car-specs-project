@@ -9,7 +9,8 @@ CREATE TABLE cars (
   torque_nm INT,
   zero_to_100 DECIMAL(4, 1),
   weight_kg INT,
-  image_url TEXT
+  image_url TEXT,
+  views INT NOT NULL DEFAULT 0
 );
 
 -- Sample data (we will add all 50 cars later)

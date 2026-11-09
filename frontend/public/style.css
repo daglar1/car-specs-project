@@ -1,78 +1,184 @@
+/* Fonts: Bebas Neue for headings, IBM Plex Mono for text and numbers */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+/* Color palette in one place, easy to change later */
+:root {
+  --paper: #f3ead7;
+  --card: #fbf6ea;
+  --ink: #2b2622;
+  --muted: #7a6f63;
+  --line: #d8c9a8;
+  --red: #b3261e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    color: #222;
-  }
-  
-  header {
-    background: #1a1a1a;
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  header p {
-    color: #aaa;
-    margin: 5px 0 0;
-  }
-  
-  .car-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 16px;
-    padding: 20px;
-  }
-  
-  .car-card {
-    background: white;
-    border-radius: 8px;
-    padding: 16px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .car-card h3 {
-    margin: 0 0 8px;
-  }
-  /* Make card links look like cards */
+  margin: 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 15px;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+/* Header with a thin racing stripe at the bottom */
+header {
+  background: var(--ink);
+  color: var(--paper);
+  text-align: center;
+  padding: 28px 20px 22px;
+  border-bottom: 6px solid var(--red);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 56px;
+  line-height: 1;
+}
+
+header p {
+  margin: 8px 0 0;
+  color: var(--line);
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* Car list on the home page */
+.car-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 18px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 20px;
+}
+
+.car-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--red);
+  padding: 16px 18px;
+}
+
 a.car-card {
   display: block;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.15s;
 }
 
 a.car-card:hover {
-  transform: translateY(-3px);
+  border-color: var(--ink);
+  border-left-color: var(--red);
+}
+
+.car-card h3 {
+  margin: 0 0 6px;
+  font-size: 26px;
+}
+
+.car-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 /* Detail page */
 .detail {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 28px 20px;
+}
+
+.detail h2 {
+  font-size: 44px;
+  margin: 12px 0 4px;
+}
+
+.detail h3 {
+  font-size: 24px;
+  margin: 28px 0 10px;
+  color: var(--red);
 }
 
 .back-link {
-  color: #555;
+  color: var(--muted);
   text-decoration: none;
+  font-size: 13px;
 }
 
+.back-link:hover {
+  color: var(--red);
+}
+
+/* Spec sheet style tables */
 table {
   width: 100%;
   border-collapse: collapse;
-  background: white;
-  margin-bottom: 24px;
+  background: var(--card);
+  border: 1px solid var(--line);
 }
 
 th,
 td {
   text-align: left;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
 }
 
 th {
-  background: #1a1a1a;
-  color: white;
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* First column of the specs table works as a label */
+#specs-body td:first-child {
+  width: 40%;
+  color: var(--muted);
+}
+/* Most viewed section */
+.popular {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 20px 0;
+}
+
+.popular h2 {
+  font-size: 28px;
+  margin: 0 0 8px;
+  color: var(--red);
+}
+
+.popular ol {
+  margin: 0;
+  padding-left: 22px;
+  color: var(--muted);
+}
+
+.popular li {
+  padding: 3px 0;
+}
+
+.popular a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.popular a:hover {
+  color: var(--red);
 }
