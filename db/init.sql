@@ -117,3 +117,57 @@ CROSS JOIN (VALUES
   
 ('Front Brake Discs', 'Brakes', 'FBD')
 ) AS p(name, category, code);
+
+-- Car photos from Wikimedia Commons
+-- Paste each image link (https://upload.wikimedia.org/...) between the quotes
+-- An empty link ('') shows a placeholder on the website
+UPDATE cars SET image_url = '' WHERE id = 1; -- BMW M3 E30
+UPDATE cars SET image_url = '' WHERE id = 2; -- Toyota Supra MK4
+UPDATE cars SET image_url = '' WHERE id = 3; -- Nissan Skyline GT-R R34
+UPDATE cars SET image_url = '' WHERE id = 4; -- Honda NSX
+UPDATE cars SET image_url = '' WHERE id = 5; -- Mazda RX-7 FD
+UPDATE cars SET image_url = '' WHERE id = 6; -- Mitsubishi Lancer Evolution VI
+UPDATE cars SET image_url = '' WHERE id = 7; -- Subaru Impreza WRX STi GC8
+UPDATE cars SET image_url = '' WHERE id = 8; -- Toyota Sprinter Trueno AE86
+UPDATE cars SET image_url = '' WHERE id = 9; -- Nissan 300ZX Twin Turbo Z32
+UPDATE cars SET image_url = '' WHERE id = 10; -- Porsche 911 Carrera 964
+UPDATE cars SET image_url = '' WHERE id = 11; -- Porsche 911 Turbo 993
+UPDATE cars SET image_url = '' WHERE id = 12; -- Porsche 959
+UPDATE cars SET image_url = '' WHERE id = 13; -- Ferrari F40
+UPDATE cars SET image_url = '' WHERE id = 14; -- Ferrari Testarossa
+UPDATE cars SET image_url = '' WHERE id = 15; -- Ferrari F355
+UPDATE cars SET image_url = '' WHERE id = 16; -- Ferrari 360 Modena
+UPDATE cars SET image_url = '' WHERE id = 17; -- Lamborghini Countach LP5000 QV
+UPDATE cars SET image_url = '' WHERE id = 18; -- Lamborghini Diablo
+UPDATE cars SET image_url = '' WHERE id = 19; -- Lamborghini Murcielago
+UPDATE cars SET image_url = '' WHERE id = 20; -- McLaren F1
+UPDATE cars SET image_url = '' WHERE id = 21; -- Bugatti EB110 GT
+UPDATE cars SET image_url = '' WHERE id = 22; -- Bugatti Veyron 16.4
+UPDATE cars SET image_url = '' WHERE id = 23; -- Pagani Zonda C12 S
+UPDATE cars SET image_url = '' WHERE id = 24; -- Mercedes-Benz 190E 2.5-16 Evolution II
+UPDATE cars SET image_url = '' WHERE id = 25; -- Mercedes-Benz SLR McLaren
+UPDATE cars SET image_url = '' WHERE id = 26; -- BMW M5 E39
+UPDATE cars SET image_url = '' WHERE id = 27; -- BMW M3 E46
+UPDATE cars SET image_url = '' WHERE id = 28; -- BMW Z8
+UPDATE cars SET image_url = '' WHERE id = 29; -- Audi Sport Quattro
+UPDATE cars SET image_url = '' WHERE id = 30; -- Audi RS2 Avant
+UPDATE cars SET image_url = '' WHERE id = 31; -- Volkswagen Golf GTI Mk2
+UPDATE cars SET image_url = '' WHERE id = 32; -- Lancia Delta HF Integrale Evoluzione
+UPDATE cars SET image_url = '' WHERE id = 33; -- Ford Sierra RS Cosworth
+UPDATE cars SET image_url = '' WHERE id = 34; -- Ford Escort RS Cosworth
+UPDATE cars SET image_url = '' WHERE id = 35; -- Ford GT
+UPDATE cars SET image_url = '' WHERE id = 36; -- Chevrolet Corvette C4 ZR-1
+UPDATE cars SET image_url = '' WHERE id = 37; -- Chevrolet Corvette C6 Z06
+UPDATE cars SET image_url = '' WHERE id = 38; -- Dodge Viper RT/10
+UPDATE cars SET image_url = '' WHERE id = 39; -- Ford Mustang SVT Cobra
+UPDATE cars SET image_url = '' WHERE id = 40; -- Toyota Celica GT-Four ST205
+UPDATE cars SET image_url = '' WHERE id = 41; -- Honda Integra Type R DC2
+UPDATE cars SET image_url = '' WHERE id = 42; -- Honda S2000
+UPDATE cars SET image_url = '' WHERE id = 43; -- Honda Civic Type R EK9
+UPDATE cars SET image_url = '' WHERE id = 44; -- Mazda MX-5 Miata NA
+UPDATE cars SET image_url = '' WHERE id = 45; -- Nissan Silvia S15 Spec-R
+UPDATE cars SET image_url = '' WHERE id = 46; -- Lexus LFA
+UPDATE cars SET image_url = '' WHERE id = 47; -- Nissan GT-R R35
+UPDATE cars SET image_url = '' WHERE id = 48; -- Porsche Carrera GT
+UPDATE cars SET image_url = '' WHERE id = 49; -- Ferrari Enzo
+UPDATE cars SET image_url = '' WHERE id = 50; -- DeLorean DMC-12

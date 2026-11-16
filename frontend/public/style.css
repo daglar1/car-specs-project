@@ -225,3 +225,35 @@ td.better {
   color: var(--red);
   font-weight: 600;
 }
+/* Car photos */
+.car-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  margin-bottom: 12px;
+  background: var(--line);
+  filter: sepia(0.15);
+}
+
+.car-photo.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+.car-photo.large {
+  margin: 16px 0 8px;
+}
+
+/* Photo credits at the bottom of the home page */
+.credits {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  padding: 20px;
+}

@@ -1,3 +1,50 @@
+// Ask Wikipedia for the main photo of the best matching article
+async function findWikiPhoto(car) {
+  const query = encodeURIComponent(car.brand + ' ' + car.model);
+  const url = 'https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*'
+    + '&generator=search&gsrlimit=1&gsrsearch=' + query
+    + '&prop=pageimages&piprop=thumbnail&pithumbsize=640';
+  const response = await fetch(url);
+  const data = await response.json();
+  if (!data.query) {
+    return null;
+  }
+  const page = Object.values(data.query.pages)[0];
+  return page.thumbnail ? page.thumbnail.source : null;
+}
+
+// Show a placeholder first, then swap it for the real photo when it is found
+function addPhoto(container, car, extraClass) {
+  const placeholder = document.createElement('div');
+  placeholder.className = 'car-photo placeholder ' + extraClass;
+  placeholder.textContent = car.brand;
+  container.appendChild(placeholder);
+
+  const showImage = (src) => {
+    const photo = document.createElement('img');
+    photo.className = 'car-photo ' + extraClass;
+    photo.src = src;
+    photo.alt = car.brand + ' ' + car.model;
+    placeholder.replaceWith(photo);
+  };
+
+  // A manual link in the database always wins
+  if (car.image_url) {
+    showImage(car.image_url);
+    return;
+  }
+
+  findWikiPhoto(car)
+    .then((src) => {
+      if (src) {
+        showImage(src);
+      }
+    })
+    .catch(() => {
+      // Keep the placeholder if Wikipedia cannot be reached
+    });
+}
+
 // Fetch the car list from the backend and show it on the page
 async function loadCars() {
   const list = document.getElementById('car-list');
@@ -19,6 +66,7 @@ async function loadCars() {
       const info = document.createElement('p');
       info.textContent = car.year + ' · ' + car.horsepower + ' hp';
 
+      addPhoto(card, car, '');
       card.appendChild(title);
       card.appendChild(info);
       list.appendChild(card);
