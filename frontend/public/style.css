@@ -182,3 +182,46 @@ th {
 .popular a:hover {
   color: var(--red);
 }
+/* Link to the compare page on the home page */
+.compare-link {
+  display: block;
+  max-width: 1100px;
+  margin: 20px auto 0;
+  padding: 0 20px;
+  color: var(--red);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.compare-link:hover {
+  text-decoration: underline;
+}
+
+/* Compare page */
+.compare-select {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0 24px;
+}
+
+.compare-select select {
+  flex: 1;
+  padding: 8px;
+  font-family: 'IBM Plex Mono', monospace;
+  background: var(--card);
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.compare-select span {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  color: var(--red);
+}
+
+/* Better value in a comparison row */
+td.better {
+  color: var(--red);
+  font-weight: 600;
+}
